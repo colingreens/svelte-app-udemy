@@ -1,10 +1,24 @@
 <script>
-  let count = 0
-  const increment = () => {
-    count += 1
+  export let initialCount; //required if no default value
+  export let maxCount;
+
+  let count = initialCount;
+  
+  $:string = `You have clicked ${count} times`
+
+  function increment(){
+    if (count === maxCount) {
+      return;
+    }
+    count+= 1;
   }
 </script>
 
-<button on:click={increment}>
-  count is {count}
-</button>
+<p>{string}</p>
+<button on:click={increment}>Clicks {count}</button>
+
+<style>
+  button {
+    padding: 15px 20px;
+  }
+</style>
