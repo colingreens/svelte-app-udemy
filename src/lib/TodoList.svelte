@@ -3,19 +3,10 @@
   import { v4 as uuid } from "uuid";
 
   export let todos = [];
-  let input;
   let inputText = "";
 
   function handleAddTodo() {
     if (!inputText) return;
-
-    // todos.push({
-    //   id: uuid(),
-    //   title: inputText,
-    //   completed: false,
-    // });
-
-    // todos = todos; //update state, push does not work, must use assignment operator.
 
     todos = [
       ...todos,
