@@ -19,10 +19,15 @@
       completed: true,
     },
   ];
+  let todo = "";
+
+  function handleAddTodo(event) {
+    todo = event.detail.title;
+  }
 </script>
 
-<h2>{todos.length} Todos</h2>
-<TodoList bind:todos />
+<h1>{todo}</h1>
+<TodoList {todos} on:addtodo={handleAddTodo} />
 
 <style>
 </style>
